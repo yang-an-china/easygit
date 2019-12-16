@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            li {padding-top:10px;}
+            p {text-indent:2em;}
+        </style>
+    </head>
+
+    <body>
+        <div class="detail">
+            <h1>git tag</h1>
+            <h4><a href="git-tag.html">图解</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+
+            <!---->
+            <h3><li>git tag -a Vxx -m "XXX"</li></h3>
+            <p>在本地仓库创建一个标签，其名称为Vxx，描述信息为XXX（-a: --annotate, -m: --message）</p>
+            <!---->
+            <h3><li>git tag -a Vxx -m "XXX" &lt;commit-id&gt;</li></h3>
+            <p>在本地仓库的commit-id节点创建一个标签，其名称为Vxx，描述信息为XXX（-a: --annotate, -m: --message）</p>
+            <!---->
+            <h3><li>git tag -l</li></h3>
+            <h3><li>git show-ref --tag</li></h3>
+            <p>查看本地仓库的所有标签（-l: --list）</p>
+            <h3><li>git show Vxx</li></h3>
+            <p>查看本地仓库Vxx标签的详细信息</p>
+            <!---->
+            <h3><li>git tag -d Vxx</li></h3>
+            <p>在本地仓库删除一个名称为Vxx的标签 （-d: --delete）</p>
+            <!---->
+            <h3><li>git push origin Vxx</li></h3>
+            <p>推送本地仓库的Vxx标签到远程仓库</p>
+            <!---->
+            <h3><li>git push origin :Vxx</li></h3>
+            <p>删除远程仓库的Vxx tag</p>
+            <!--p style="color:red">需要refs/tags/*的Force Push权限</p-->
+            
+            <h4><a href="git-tag.html">图解</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+            <h1>git tag</h1>
+        </div>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:absolute;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>
