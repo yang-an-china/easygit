@@ -1,0 +1,33 @@
+body {
+	background-color:#f6f6f6;
+}
+
+li {
+	padding-top:20px;
+}
+
+p {
+	text-indent:2em;
+}
+
+.detail, .main {
+    margin-left:10px;
+}
+
+.home {
+	position:fixed;
+	top:30px;
+	right:150px;
+}
+
+.row:after {
+	content: ""; 
+	display: table; 
+	clear: both;
+}
+
+.column {
+	box-sizing: border-box;
+	float: left; 
+	padding: 10px;
+}

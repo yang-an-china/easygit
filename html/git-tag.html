@@ -2,16 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8">
+	    <title>easygit</title>
         <script src="https://cdn.jsdelivr.net/npm/@gitgraph/js" crossorigin="anonymous"></script>
-        <style>
-            * {box-sizing: border-box;}
-            .column {float: left; padding: 10px;} <!--text-align:center;-->
-            .row:after { content: ""; display: table; clear: both; }
-            li {padding-top:20px;}
-        </style>
+        <script src="../js/diagram.js"></script>
+		<link rel="stylesheet" href="../css/style.css" />
     </head>
-    <title>easygit</title>
+
     <body>
+        <h4 class='home'><a href="git-tag-detail.html">更多细节</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
         <div class="row">
             <div class="column" id="before" style="width:30%;">
                 <h1>git tag</h1><br/>
@@ -24,49 +22,34 @@
                     <li>创建一个V1.0的标签</li>
                     <li>该标签的描述信息为“tag:v1.0”</li>
                 </ul>
-                <br/>
-                <h4><a href="git-tag-detail.html">更多细节</a></h4>
-                <h4><a href="../index.html">回到主页</a></h4>
             </div>
         </div>
 
         <script>
-            const graphContainer = document.getElementById("before");
-            const gitTemplate = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
-                                                          commit: {message: {displayAuthor: false, displayHash: false}},
-                                                          branch: {lineWidth: 7}});
-            const gitgraph = GitgraphJS.createGitgraph(graphContainer, {template: gitTemplate, branchLabelOnEveryCommit: true});
-        
-            // master
-            var master = gitgraph.branch("master"); 
+            var gitgraph;
+            var master;
+            var develop;
+            
+            // before
+            gitgraph = get_gitgraph("before");
+            master = gitgraph.branch("master"); 
             master.commit("Initial").commit("m1");
-            // develop
-            var develop = gitgraph.branch("develop");
+            develop = gitgraph.branch("develop");
             develop.commit("dev init").commit("d1").commit("d2");
-            // merge
             master.merge({branch: develop, commitOptions: {subject:"Build Version"}});
-        </script>
-      
-        <script>
-            var graphContainer1 = document.getElementById("after");
-            var gitTemplate1 = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
-                                                           commit: {message: {displayAuthor: false,displayHash: false}},
-                                                           branch: {lineWidth: 7}});
-            var gitgraph1 = GitgraphJS.createGitgraph(graphContainer1, {template: gitTemplate1, branchLabelOnEveryCommit: true});
-
-            // master
-            var master = gitgraph1.branch("master"); 
+        
+            // after
+            gitgraph = get_gitgraph("after");
+            master = gitgraph.branch("master"); 
             master.commit("Initial").commit("m1");
-            // develop
-            var develop = gitgraph1.branch("develop");
+            develop = gitgraph.branch("develop");
             develop.commit("dev init").commit("d1").commit("d2");
-            // merge
             master.merge({branch: develop, commitOptions: {subject:"Build Version"}});
             master.tag({name:"V1.0", style:{color:"red", bgColor:"blue"}});
         </script>
 
         <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
-            <svg width="80" height="80" viewBox="0 0 250 250" style="position:absolute;top:0;fill:#fff;right:0">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
                 <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
                 <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
                 <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
