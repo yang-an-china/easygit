@@ -20,6 +20,11 @@ p {
 	right:150px;
 }
 
+.shell {
+    background-color:#000000;
+    color:#FFFFFF;
+}
+
 .row:after {
 	content: ""; 
 	display: table; 

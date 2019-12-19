@@ -10,29 +10,24 @@
         <div class="detail">
             <h4 class='home'><a href="../index.html">回到主页</a></h4>
 
-            <h1>git init</h1>
+            <h1>git log</h1>
             <!---->
-            <h3><li>git init</li></h3>
-            <p>在当前目录创建一个代码仓库</p>
+            <h3><li>git log</li></h3>
+            <p>查看commit日志</p>
             <!---->
-            <h3><li>git init --bare</li></h3>
-            <p>在当前目录创建一个裸仓库（仅包含版本管理[即.git文件夹下的内容]，不包含代码内容）</p>
+            <h3><li>git log -n</li></h3>
+            <p>查看最新的n条commit日志</p>
             <!---->
-            <h3><li>如何在本地进行git练习</li></h3>
+            <h3><li>如何优雅的查看commit日志</li></h3>
             <ul>
-                <li><b>创建一个代码仓库</b><ul>
-                        <li><span class="shell"><b>/home/git/rep$</b> git init --bare</span></li>
+                <li><b>设置log的alias为git lg</b><ul>
+                        <li>
+                            <span class="shell">$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>
+                        </li>
                 </ul></li>
-                <li><b>创建两个用户</b><ul>
-                    <li>
-                        <span class="shell"><b>/home/git/user$</b> git clone /home/git/rep/ usr1</span>
-                    </li>
-                    <li>
-                        <span class="shell"><b>/home/git/user$</b> git clone /home/git/rep/ usr2</span>
-                    </li>
+                <li><b>git lg -n</b><ul>
+                    <li><img src="../img/gitlg.jpg"></img></li>
                 </ul></li>
-                <li><b>可以在usr1和usr2下模拟两个用户进行git练习</b></li>
-            </ul>
         </div>
         
         <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
