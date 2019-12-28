@@ -10,29 +10,58 @@ p {
 	text-indent:2em;
 }
 
-.detail, .main {
-    margin-left:10px;
-}
-
+/* 返回主页的浮动链接 */
 .home {
 	position:fixed;
 	top:30px;
 	right:150px;
 }
 
+/* 外框main table */
+.main_table {
+    width:100%;
+    margin-top:0px;
+    margin-left:10px;
+}
+
+/* 代码行，命令行内容(黑白配) */
 .shell {
     background-color:#000000;
     color:#FFFFFF;
+    font-family:Courier New;
+    width:70%;
 }
 
-.row:after {
-	content: ""; 
-	display: table; 
-	clear: both;
+/* 表格的标题，h1 */
+.thh1 {
+    text-align:left;
 }
 
-.column {
-	box-sizing: border-box;
-	float: left; 
-	padding: 10px;
+/* 1行3列 30%30%40% 取30% */
+.td334_3 {
+    width:30%;
+    vertical-align:top;
+}
+
+/* 1行3列 30%30%40% 取40% */
+.td334_4 {
+    width:30%;
+    vertical-align:top;
+}
+
+/* 1行2列 第一列2行td布局 */
+.td55 {
+    width:50%;
+    vertical-align:top;
+}
+
+/* 段落 错误 */
+/* 段落 正确 */
+.perror {
+    color:red;
+    font-weight:bold;
+}
+.pok {
+    color:green;
+    font-weight:bold;
 }

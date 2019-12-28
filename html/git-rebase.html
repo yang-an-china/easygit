@@ -9,44 +9,56 @@
     </head>
 
     <body>
-        <h4 class='home'><a href="git-tag-detail.html">更多细节</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+        <h4 class='home'><a href="git-rebase-detail.html">更多细节</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+        
         <table class="main_table">
-            <tr><th align="left"><h1>git tag</h1></th></tr>
+            <tr><th class="thh1"><h1>git rebase</h1></th></tr>
             <tr>
-                <td id="before" class="td334_3"></td>
-                <td id="after" class="td334_3"></td>
-                <td  class="td334_4">
-                    <h2>git tag -a "V1.0" -m "tag:V1.0"</h2>
+                <td class="td55">
+                    <table>
+                        <tr id="before"></tr>
+                        <tr id="after"></tr>
+                    </table>
+                </td>
+                <td class="td55">
+                    <h2>git rebase master</h2>
+                    <h2>git rebase master develop</h2>
                     <ul>
-                        <li>当前在mster分支的HEAD</li>
-                        <li>创建一个V1.0的标签</li>
-                        <li>该标签的描述信息为“tag:v1.0”</li>
+                        <li>当前在develop分支</li>
+                        <li>将develop分支变基到master分支的HEAD</li>
                     </ul>
                 </td>
             </tr>
         </table>
-
         <script>
             var gitgraph;
             var master;
             var develop;
             
             // before
-            gitgraph = get_gitgraph("before");
+            gitgraph = get_gitgraph_H("before");
             master = gitgraph.branch("master"); 
-            master.commit("Initial").commit("m1");
+            master.commit({subject:"A", dotText: "A"});
+            master.commit({subject:"B", dotText: "B"});
+            master.commit({subject:"C", dotText: "C"});
             develop = gitgraph.branch("develop");
-            develop.commit("dev fork").commit("d1").commit("d2");
-            master.merge({branch: develop, commitOptions: {subject:"Build Version"}});
-        
+            develop.commit({subject:"F", dotText: "F"});
+            master.commit({subject:"D", dotText: "D"});
+            master.commit({subject:"E", dotText: "E"});
+            develop.commit({subject:"G", dotText: "G"});
+
             // after
-            gitgraph = get_gitgraph("after");
+            gitgraph = get_gitgraph_H("after");
             master = gitgraph.branch("master"); 
-            master.commit("Initial").commit("m1");
+            master = gitgraph.branch("master"); 
+            master.commit({subject:"A", dotText: "A"});
+            master.commit({subject:"B", dotText: "B"});
+            master.commit({subject:"C", dotText: "C"});
+            master.commit({subject:"D", dotText: "D"});
+            master.commit({subject:"E", dotText: "E"});
             develop = gitgraph.branch("develop");
-            develop.commit("dev fork").commit("d1").commit("d2");
-            master.merge({branch: develop, commitOptions: {subject:"Build Version"}});
-            master.tag({name:"V1.0", style:{color:"red", bgColor:"blue"}});
+            develop.commit({subject:"F'", dotText: "F'"});
+            develop.commit({subject:"G'", dotText: "G'"});
         </script>
 
         <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">

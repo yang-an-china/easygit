@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <title>easygit</title>
+        <script src="https://cdn.jsdelivr.net/npm/@gitgraph/js" crossorigin="anonymous"></script>
+        <script src="../js/diagram.js"></script>
+		<link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'><a href="git-rebase-detail.html">更多细节</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+        
+        <table class="main_table">
+            <tr><th class="thh1" colspan="3"><h1>git rebase -i &lt;after-this-commit&gt;</h1></th></tr>
+            <tr>
+                <td id="before" class="td334_3"></td>
+                <td id="after" class="td334_3"></td>
+                <td  class="td334_4">
+                    <h2>git rebase -i a1a2a3a</h2>
+                    <div class="shell">
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> b1b2b3b</span><span style="color:#FF0000"> B</span><br/>
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> c1c2c3c</span><span style="color:#FF0000"> C</span><br/>
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> d1d2d3d</span><span style="color:#FF0000"> D</span><br/>
+                        <br/>
+                        <span style="color:#0000FF"># Rebase</span>
+                        <span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF">..</span><span style="color:#00FFFF">d1d2d3d</span>
+                        <span style="color:#0000FF"> onto</span><span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF"> (3 command(s))</span><br/>
+                        <span style="color:#0000FF">#</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="before1" class="td334_3"></td>
+                <td id="after1" class="td334_3"></td>
+                <td  class="td334_4">
+                    <h2>git rebase -i a1a2a3a</h2>
+                    <div class="shell">
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> b1b2b3b</span><span style="color:#FF0000"> B</span><br/>
+                        <span style="color:#00FF00">squash</span><span style="color:#00FFFF"> c1c2c3c</span><span style="color:#FF0000"> C</span><br/>
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> d1d2d3d</span><span style="color:#FF0000"> D</span><br/>
+                        <br/>
+                        <span style="color:#0000FF"># Rebase</span>
+                        <span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF">..</span><span style="color:#00FFFF">d1d2d3d</span>
+                        <span style="color:#0000FF"> onto</span><span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF"> (3 command(s))</span><br/>
+                        <span style="color:#0000FF">#</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="before2" class="td334_3"></td>
+                <td id="after2" class="td334_3"></td>
+                <td  class="td334_4">
+                    <h2>git rebase -i a1a2a3a</h2>
+                    <div class="shell">
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> b1b2b3b</span><span style="color:#FF0000"> B</span><br/>
+                        <span style="color:#FF00FF">fixup</span><span style="color:#00FFFF"> c1c2c3c</span><span style="color:#FF0000"> C</span><br/>
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> d1d2d3d</span><span style="color:#FF0000"> D</span><br/>
+                        <br/>
+                        <span style="color:#0000FF"># Rebase</span>
+                        <span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF">..</span><span style="color:#00FFFF">d1d2d3d</span>
+                        <span style="color:#0000FF"> onto</span><span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF"> (3 command(s))</span><br/>
+                        <span style="color:#0000FF">#</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="before3" class="td334_3"></td>
+                <td id="after3" class="td334_3"></td>
+                <td  class="td334_4">
+                    <h2>git rebase -i a1a2a3a</h2>
+                    <div class="shell">
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> b1b2b3b</span><span style="color:#FF0000"> B</span><br/>
+                        <span style="color:#FFFF00">pick</span><span style="color:#00FFFF"> c1c2c3c</span><span style="color:#FF0000"> C</span><br/>
+                        <span style="color:#FFFFFF">drop</span><span style="color:#00FFFF"> d1d2d3d</span><span style="color:#FF0000"> D</span><br/>
+                        <br/>
+                        <span style="color:#0000FF"># Rebase</span>
+                        <span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF">..</span><span style="color:#00FFFF">d1d2d3d</span>
+                        <span style="color:#0000FF"> onto</span><span style="color:#00FFFF"> a1a2a3a</span><span style="color:#0000FF"> (3 command(s))</span><br/>
+                        <span style="color:#0000FF">#</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+            var gitgraph;
+            var master;
+            var develop;
+            
+            // before
+            gitgraph = get_gitgraph("before", true);
+            master = gitgraph.branch("master");
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"B", dotText: "B", hash:"b1b2b3b"});
+            master.commit({subject:"C", dotText: "C", hash:"c1c2c3c"});
+            master.commit({subject:"D", dotText: "D", hash:"d1d2d3d"});
+
+            // after
+            gitgraph = get_gitgraph("after", true);
+            master = gitgraph.branch("master"); 
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"B", dotText: "B", hash:"b1b2b3b"});
+            master.commit({subject:"C", dotText: "C", hash:"c1c2c3c"});
+            master.commit({subject:"D", dotText: "D", hash:"d1d2d3d"});
+            
+            // before1
+            gitgraph = get_gitgraph("before1", true);
+            master = gitgraph.branch("master");
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"B", dotText: "B", hash:"b1b2b3b"});
+            master.commit({subject:"C", dotText: "C", hash:"c1c2c3c"});
+            master.commit({subject:"D", dotText: "D", hash:"d1d2d3d"});
+
+            // after1
+            gitgraph = get_gitgraph("after1", true);
+            master = gitgraph.branch("master"); 
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"squash B and C", dotText: "BC", hash:"bcbcbcb"});
+            master.commit({subject:"D", dotText: "D", hash:"d9d8d7d"});
+            
+            // before2
+            gitgraph = get_gitgraph("before2", true);
+            master = gitgraph.branch("master");
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"B", dotText: "B", hash:"b1b2b3b"});
+            master.commit({subject:"C", dotText: "C", hash:"c1c2c3c"});
+            master.commit({subject:"D", dotText: "D", hash:"d1d2d3d"});
+
+            // after2
+            gitgraph = get_gitgraph("after2", true);
+            master = gitgraph.branch("master"); 
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"B", dotText: "B", hash:"bcbcbcb"});
+            master.commit({subject:"D", dotText: "D", hash:"d9d8d7d"});
+            
+            // before3
+            gitgraph = get_gitgraph("before3", true);
+            master = gitgraph.branch("master");
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"B", dotText: "B", hash:"b1b2b3b"});
+            master.commit({subject:"C", dotText: "C", hash:"c1c2c3c"});
+            master.commit({subject:"D", dotText: "D", hash:"d1d2d3d"});
+
+            // after3
+            gitgraph = get_gitgraph("after3", true);
+            master = gitgraph.branch("master"); 
+            master.commit({subject:"A", dotText: "A", hash:"a1a2a3a"});
+            master.commit({subject:"B", dotText: "B", hash:"b1b2b3b"});
+            master.commit({subject:"C", dotText: "C", hash:"c1c2c3c"});
+
+        </script>
+
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <title>easygit</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'>
+            <a href="git-rebase.html">图解git rebase</a>&nbsp;&nbsp;&nbsp;
+            <a href="git-rebase--onto (branch).html">图解git rebase --onto (branch)</a>&nbsp;&nbsp;&nbsp;
+            <a href="git-rebase--onto (commit).html">图解git rebase --onto (commit)</a>&nbsp;&nbsp;&nbsp;
+            <a href="git-rebase-i.html">图解git rebase -i</a>&nbsp;&nbsp;&nbsp;
+            <a href="../index.html">回到主页</a>
+            </h4>
+        <table class="main_table">
+            <tr><th class="thh1"><h1>git rebase</h1></th></tr>
+            <tr>
+                <td>
+                    <!--主要内容-->
+                    <!---->
+                    <p style="text-indent:0;">git rebase的作用是变基，可以作用到分支上，也可以作用到某个分支的commit上。</p>
+                    <p style="text-indent:0;">常用用法如下：</p>
+                    
+                    <h3><li>git rebase &lt;upstream&gt; [branch]</li></h3>
+                    <p>把[branch]分支变基到upstream(一般是分支)</p>
+                    <p>如果[branch]为空，则是当前分支</p>
+                    <p class="perror">错误用法：git rebase origin master</p>
+                    <p class="pok">正确用法：git rebase origin/master master</p>
+                    <!---->
+                    <h3><li>git rebase -i</li></h3>
+                    <p>rebase的交互模式</p>
+                    <p>一般用来处理某个分支下的commit，参见图解：<a href="git-rebase-i.html">git rebase i</a></p>
+                    
+                </td>
+            </tr>
+        </table>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>

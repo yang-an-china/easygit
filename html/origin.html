@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>easygit</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'><a href="git-concepts.html">concepts</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+
+        <table class="main_table">
+            <tr><th class="thh1"><h1>origin</h1></th></tr>
+            <tr><td>
+                <!--主要内容-->
+                <!---->
+                <hr><br/>
+                <b>origin是远程仓库在本地的别名。<br/><br/>origin/master是远程仓库的master分支。</b>
+                
+                <h3><li>如何查看origin</li></h3>
+                    <ul>
+                        <li>查看.git/config文件，其中的[remote "origin"]项即是：</li><br>
+                        <div class="shell">[remote "origin"]<br>url = https://github.com/yang-an-china/easygit.git<br>fetch = +refs/heads/*:refs/remotes/origin/*</div>
+                    </ul>
+                    <ul>
+                        <li>命令：<span class="shell">git remote -v</span></li><br>
+                        <div class="shell">$ git remote -v<br>origin  https://github.com/yang-an-china/easygit.git (fetch)<br>origin  https://github.com/yang-an-china/easygit.git (push)</div>
+                    </ul>
+                    <ul>
+                        <li>命令：<span class="shell">git config --get remote.origin.url</span></li><br>
+                        <div class="shell">$ git config --get remote.origin.url<br>https://github.com/yang-an-china/easygit.git</div>
+                    </ul>
+                    
+                <h3><li>origin是唯一的吗？</li></h3>
+                    <p>如前所言，origin仅仅是默认的别名，当然就可以修改。</p>
+                    <p>假设我要为远程仓库增加一个mine的别名，有如下途径：</p>
+                    <ul>
+                        <li>直接修改.git/config文件</li><br>
+                        <div class="shell">[remote "mine"]<br>url = https://github.com/yang-an-china/easygit.git<br>fetch = +refs/heads/*:refs/remotes/origin/*</div>
+                    </ul>
+                    <ul>
+                        <li>命令：<span class="shell">git remote add mine https://github.com/yang-an-china/easygit.git</span></li><br>
+                    </ul>
+                
+            </td></tr>
+        </table>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>easygit</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'><a href="git-concepts.html">concepts</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+
+        <table class="main_table">
+            <tr><th class="thh1"><h1>upstream</h1></th></tr>
+            <tr><td>
+                <!--主要内容-->
+                <!---->
+                <hr><br/>
+                <b>upstream是本地分支关联的<u>远程分支</u>。</b>
+                
+                <h3><li>如何查看upstream</li></h3>
+                    <ul>
+                        <li>命令：<span class="shell">git branch -vv</span></li><br>
+                        <div class="shell">$ git branch -vv<br>* master a6eef83 [origin/master] add git log modify some style</div>
+                        <br>
+                        其中远程origin对应的master分支就是本地master分支的upstream
+                    </ul>
+                    
+                <h3><li>如何设置upstream</li></h3>
+                        <ul>
+                            <li>命令：<span class="shell">git branch (--set-upstream-to=&lt;upstream&gt; | -u &lt;upstream&gt;) [&lt;branchname&gt;]</span></li><br>
+                            如果branchname不填写的话，则默认是当前分支。
+                            <br>
+                            <ul>
+                                <li>示例：设置本地分支mybranch的远程跟踪分支为master。</li><br>
+                                <div class="shell">
+                                    <br>
+                                    $ git branch -vv<br>
+                                    mybranch a6eef83 add git log modify some style<br>
+                                    * master a6eef83 [origin/master] add git log modify some style<br>
+                                    <br>
+                                    $ git branch -u origin/master mybranch<br>
+                                    Branch mybranch set up to track remote branch master from origin.<br>
+                                    <br>
+                                    $ git branch -vv<br>
+                                      mybranch     a6eef83 [origin/master] add git log modify some style<br>
+                                    * master a6eef83 [origin/master] add git log modify some style<br>
+                                    <br>
+                                    $ git branch --unset-upstream mybranch<br>
+                                    <br>
+                                    $ git branch -vv<br>
+                                      mybranch     a6eef83 add git log modify some style<br>
+                                    * master a6eef83 [origin/master] add git log modify some style<br>
+                                    <br>
+                                    $ git branch --set-upstream-to=origin/master mybranch<br>
+                                    Branch mybranch set up to track remote branch master from origin.<br>
+                                </div>
+                            </ul>
+                            
+                            <li>命令：<span class="shell">git checkout -b &lt;branchA&gt; --track &lt;remote&gt;/&lt;branchB&gt;</span></li><br>
+                            本地创建branchA分支用来跟踪远程branchB分支。
+                            特别的：
+                            <li>命令：<span class="shell">git checkout &lt;branchX&gt;</span></li><br>
+                            本地创建branchX分支用来跟踪远程branchX分支。
+                            
+                            <br>
+                            <ul>
+                                <li>示例：</li><br>
+                                <div class="shell">
+                                    <br>
+                                    $ git branch -vv<br>
+                                    * master a6eef83 [origin/master] add git log modify some style<br>
+                                    <br>
+                                    $ git checkout -b mybranch --track origin/master<br>
+                                    ...<br>
+                                    Branch mybranch set up to track remote branch master from origin.<br>
+                                    Switched to a new branch 'mybranch'<br>
+                                    <br>
+                                    $ git branch -vv<br>
+                                    * master   a6eef83 [origin/master] add git log modify some style<br>
+                                    mybranch a6eef83 [origin/master] add git log modify some style<br>
+                                </div>
+                            </ul>
+                            
+                            <li>当我们使用 <span class="shell">git push -u | --set-updtream</span> 时也会设置upstream</li><br>
+                            
+                    </ul>
+                
+            </td></tr>
+        </table>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>
