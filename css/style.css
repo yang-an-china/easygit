@@ -25,8 +25,15 @@ p {
     border-collapse:collapse;
 }
 
-.lined_table {
-    
+.lined_table {    
+}
+
+
+/*缩进2em table*/
+.p_table {
+    margin-top:0px;
+    margin-left:2em;
+    border-collapse:collapse;
 }
 
 /* 代码行，命令行内容(黑白配) */
@@ -65,6 +72,12 @@ p {
 /* 1行2列 第一列2行td布局 */
 .td55 {
     width:50%;
+    vertical-align:top;
+    border:solid 1px blue;
+}
+
+/* 1行1列 */
+.td100 {
     vertical-align:top;
     border:solid 1px blue;
 }

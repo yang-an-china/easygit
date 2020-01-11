@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <title>easygit</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'><a href="../index.html">回到主页</a></h4>
+        <table class="main_table">
+            <tr><th class="thh1"><h1>git diff</h1></th></tr>
+            <tr>
+                <td>
+                    <hr><br/>
+                    <b>比较不同提交之间，提交与工作树之间，不同分支之间的差异。</b>
+                    <!--主要内容-->
+                    
+                    <!---->
+                    <h3><li>git diff</li></h3>
+                    <p>工作树跟本地缓存的差异。（即在工作树中尚未add）</p>
+                    <h3><li>git diff --cached/staged</li></h3>
+                    <p>本地缓存跟本地仓库的差异。（即在缓存中尚未commit）</p>
+                    <h3><li>git diff HEAD</li></h3>
+                    <p>工作树跟本地代码库的差异。</p>
+                    
+                    <h3><li>git diff commitA commitB</li></h3>
+                    <p>commitA跟commitB的差异。</p>
+                    <h3><li>git diff branchA branchB / git diff branchA..branchB</li></h3>
+                    <p>branchA分支跟branchB分支的差异。</p>
+                    <h3><li>git diff branchA...branchB</li></h3>
+                    <p>branchA分支从branchB分支上分离之后的差异。</p>
+                    
+                    <h3><li>git diff --diff-filter=MRC</li></h3>
+                    <p>差异过滤。（M -> modification，R -> rename，C -> copy，A -> addition，D -> deletion，T -> type，U -> unmerged）</p>
+                </td>
+            </tr>
+        </table>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>
