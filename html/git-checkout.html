@@ -18,12 +18,12 @@
                     <!---->
                     <h3><li>git checkout &lt;branch&gt;</li></h3>
                     <p>1、&lt;branch&gt; 为空，空操作</p>
-                    <p>2、&lt;branch&gt; ①非当前分支 ②本地已有该分支 则切换到&lt;branch&gt;分支</p>
-                    <p>3、&lt;branch&gt; ①非当前分支 ②本地没有该分支 ③已有同名远程分支，则本地创建&lt;branch&gt;分支并追踪对应远程分支，等价于<span class="shell">git checkout -b &lt;branchA&gt; --track &lt;remote&gt;/&lt;branchB&gt;</span></p>
+                    <p>2、&lt;branch&gt; ①非当前分支 ②本地已有该分支 则切换到branch分支</p>
+                    <p>3、&lt;branch&gt; ①非当前分支 ②本地没有该分支 ③已有同名远程分支，则本地创建branch分支并追踪对应远程分支，等价于<span class="shell">git checkout -b &lt;branchA&gt; --track &lt;remote&gt;/&lt;branchB&gt;</span></p>
                     <p>4、&lt;branch&gt; ①非当前分支 ②本地没有该分支 ③没有同名远程分支，报error</p>
                     <!---->
                     <h3><li>git checkout &lt;commit&gt;</li></h3>
-                    <p>以分离(detch)的方式切换到&lt;commit&gt;，这种方式可以用来进行amend修改操作</p>
+                    <p>以分离(detach)的方式切换到commit点，这种方式可以用来进行amend修改操作</p>
                     <p>在gerrit评审中，就提供了checkout的Download方式，当提交了很多评审或者评审很混乱时，就可以通过这种方式amend修改中间的某一次评审</p>
                 </td>
             </tr>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>easygit</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'><a href="../index.html">回到主页</a></h4>
+
+        <table class="main_table">
+            <tr><th class="thh1"><h1>refs</h1></th></tr>
+            <tr><td>
+                <!--主要内容-->
+                <!---->
+                <hr><br/>
+                <b>
+                    git是一切关于commit的艺术：你暂存commit，提交commit，浏览以往的commit，在不同的仓库切换commit ... <br><br>
+                    refs的全称是references，翻译过来就是引用，git通过引用的方式，以简化commit hash的理解。<br><br>
+                    简言之，refs是commit hash的别名。
+                </b>
+                
+                <h3><li>具体引用：.git/refs/*</li></h3>
+                <p>当前仓库的refs保存在.git/refs目录下。一般而言，该目录下包含heads/，remotes/，tags/。</p>
+                <ul>
+                    <h4><li>.git/refs/heads/</li></h4>
+                    本目录下描述了所有的本地分支，每个文件名对应一个分支，文件中保存的是分支末端的commit hash值的文本格式。<br><br>
+                    <div class="shell"><span style="color:#00FF00">$ git show master</span><br>commit fd91629783442fc5daee87d5b6ea071e6e2ff072<br>Author: yang-an-china &lt;yang_an19861217@126.com&gt;<br>Date:   Sat Jan 11 14:15:47 2020 +0800<br>...<br><br><span style="color:#00FF00">$ git show refs/heads/master</span><br>commit fd91629783442fc5daee87d5b6ea071e6e2ff072<br>Author: yang-an-china &lt;yang_an19861217@126.com&gt;<br>Date:   Sat Jan 11 14:15:47 2020 +0800<br>...</div>
+                </ul>
+                <ul>
+                    <h4><li>.git/refs/remotes/</li></h4>
+                    本目录下描述了所有的本地远程跟踪分支。<br><br>
+                    <div class="shell"><span style="color:#00FF00">$ git show refs/remotes/origin/master</span><br>commit fd91629783442fc5daee87d5b6ea071e6e2ff072<br>Author: yang-an-china &lt;yang_an19861217@126.com&gt;<br>Date:   Sat Jan 11 14:15:47 2020 +0800<br>...<br></div>
+                </ul>
+                <ul>
+                    <h4><li>.git/refs/tags/</li></h4>
+                    本目录下描述了所有的本地tag标签。<br><br>
+                </ul>
+                
+                <h3><li>特殊引用：.git/HEAD，.git/FETCH_HEAD ...</li></h3>
+                    <ul><h4><li>.git/HEAD ： 当前检出的 commit/branch</li></h4></ul>
+                    <ul><h4><li>.git/FETCH_HEAD ： 最新从远程仓库获取的分支</li></h4></ul>
+                    <ul><h4><li>.git/ORIG_HEAD ： 作为备份指向危险操作前的HEAD</li></h4></ul>
+                    <ul><h4><li>.git/MERGE_HEAD ： 使用git merge命令合并进当前分支的提交</li></h4></ul>
+                    <ul><h4><li>.git/CHERRY_PICK_HEAD ： 使用git cherry-pick命令的提交</li></h4></ul>
+            </td></tr>
+        </table>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>

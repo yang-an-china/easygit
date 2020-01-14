@@ -43,6 +43,14 @@ p {
     font-family:Courier New;
     width:70%;
 }
+/*缩进2em table*/
+.p_shell {
+    margin-left:2em;
+    background-color:#000000;
+    color:#FFFFFF;
+    font-family:Courier New;
+    width:70%;
+}
 /* 代码行，命令行内容(黑白配) */
 .shell_long {
     background-color:#000000;
