@@ -9,14 +9,25 @@
     <body>
         <h4 class='home'><a href="../index.html">回到主页</a></h4>
         <table class="main_table">
-            <tr><th class="thh1"><h1>git clone &lt;repository&gt;</h1></th></tr>
+            <tr><th class="thh1"><h1>git pull</h1></th></tr>
             <tr>
                 <td>
                     <hr><br/>
-                    <b>克隆repository代码库到本地。</b>
+                    <b>抓取远程代码库内容到本地代码库，并更新到当前工作树的所有分支。请参考：<a href="git-in-one-map.html">一张图了解git</a>、<a href="git-fetch.html">git fetch</a></b>
+                    <br><br>
+                    <b>git pull == git fetch + git merge FETCH_HEAD</b>
+                    <br><br>
+                    <b>git pull --rebase == git fetch + git rebase FETCH_HEAD</b>
                     
-                    <h3><li>git clone &lt;repository&gt; [&lt;directory&gt;]</li></h3>
-                    <p>克隆repository代码库到本地directory路径；如果路径directory为空，则生成一个repository同名的目录。</p>
+                    <h3><li>git pull / git pull origin</li></h3>
+                    <p>抓取远程代码库所有分支的内容到本地代码库，并更新到当前工作树的所有分支。</p>
+                    
+                    
+                    <h3><li>git pull origin &lt;branch&gt;</li></h3>
+                    <p>抓取远程代码库branch分支的内容到本地代码库，并更新到当前工作树的branch分支。</p>
+
+                    <h3><li>git pull origin &lt;branch&gt;:&lt;local&gt;</li></h3>
+                    <p>抓取远程代码库branch分支的内容到本地代码库，并更新到当前工作树的local分支。</p>
                     
                 </td>
             </tr>

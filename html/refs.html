@@ -18,7 +18,8 @@
                 <b>
                     git是一切关于commit的艺术：你暂存commit，提交commit，浏览以往的commit，在不同的仓库切换commit ... <br><br>
                     refs的全称是references，翻译过来就是引用，git通过引用的方式，以简化commit hash的理解。<br><br>
-                    简言之，refs是commit hash的别名。
+                    简言之，refs是commit hash的别名。<br><br>
+                    一个讲解很详细的资料：<a href="https://git.seveas.net/the-meaning-of-refs-and-refspecs.html">The meaning of refs and refspecs</a>
                 </b>
                 
                 <h3><li>具体引用：.git/refs/*</li></h3>
@@ -39,11 +40,11 @@
                 </ul>
                 
                 <h3><li>特殊引用：.git/HEAD，.git/FETCH_HEAD ...</li></h3>
-                    <ul><h4><li>.git/HEAD ： 当前检出的 commit/branch</li></h4></ul>
-                    <ul><h4><li>.git/FETCH_HEAD ： 最新从远程仓库获取的分支</li></h4></ul>
-                    <ul><h4><li>.git/ORIG_HEAD ： 作为备份指向危险操作前的HEAD</li></h4></ul>
-                    <ul><h4><li>.git/MERGE_HEAD ： 使用git merge命令合并进当前分支的提交</li></h4></ul>
-                    <ul><h4><li>.git/CHERRY_PICK_HEAD ： 使用git cherry-pick命令的提交</li></h4></ul>
+                <ul><h4><li>.git/HEAD ： 当前检出的 commit/branch</li></h4></ul>
+                <ul><h4><li>.git/FETCH_HEAD ： 最新从远程仓库获取的分支</li></h4></ul>
+                <ul><h4><li>.git/ORIG_HEAD ： 作为备份指向危险操作前的HEAD</li></h4></ul>
+                <ul><h4><li>.git/MERGE_HEAD ： 使用git merge命令合并进当前分支的提交</li></h4></ul>
+                <ul><h4><li>.git/CHERRY_PICK_HEAD ： 使用git cherry-pick命令的提交</li></h4></ul>
             </td></tr>
         </table>
         

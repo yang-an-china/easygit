@@ -13,16 +13,28 @@
             <tr><th class="thh1"><h1>git log</h1></th></tr>
             <tr><td>
                 <hr><br/>
-                <b>查看日志。</b>
+                <b>查看提交日志。</b>
                 <!--主要内容-->
                 <!---->
-                <h3><li>git log</li></h3>
-                <p>查看commit日志</p>
+                <h3><li>git log (-n) [&lt;file/directory&gt;]</li></h3>
+                <p>查看所有的【file文件或者directory路径下的】（最新的n条）commit提交日志</p>
+
                 <!---->
-                <h3><li>git log -n</li></h3>
-                <p>查看最新的n条commit日志</p>
+                <h3><li>git log --no-merges</li></h3>
+                <p>查看commit提交日志，跳过merge合并</p>
+
                 <!---->
-                <h3><li>如何优雅的查看commit日志</li></h3>
+                <h3><li>git log --since="2 weeks ago" -- [&lt;file/directory&gt;]</li></h3>
+                <p>查看最近2周【file文件或者directory路径下的】commit提交日志（'--'是必要的，以避免和同名分支冲突）</p>
+                <p>--since，--after -> 指定时间之后，不包含当前日期</p>
+                <p>--until，--before -> 指定时间之前，包含当前日期</p>
+
+                <!---->
+                <h3><li>git log --follow &lt;file&gt;</li></h3>
+                <p>查看更改了file的commit提交日志</p>
+                
+                <!---->
+                <h3><li>如何优雅的查看commit提交日志</li></h3>
                 <ul>
                     <li><b>设置log的alias为git lg</b>
                         <ul>

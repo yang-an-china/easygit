@@ -15,18 +15,18 @@
                     <hr><br/>
                     <b>抓取远程代码库内容到本地代码库。请参考：<a href="git-in-one-map.html">一张图了解git</a></b>
                     
-                    <h3><li>git fetch origin</li></h3>
+                    <h3><li>git fetch / git fetch origin</li></h3>
                     <p>抓取远程代码库所有分支的内容到本地代码库。</p>
                     
                     <h3><li>git fetch origin &lt;branch&gt;</li></h3>
                     <p>抓取远程代码库branch分支的内容到本地代码库，branch分支必须存在。</p>
-                    <div class="p_shell"><span style="color:#00FF00">$ git fetch origin abc</span><br>fatal: Couldn't find remote ref abc<br><br><span style="color:#00FF00">$ git fetch origin master</span><br>From https://github.com/yang-an-china/easygit<br> * branch            master     -> FETCH_HEAD<br></div>
+                    <div class="p_shell"><span style="color:#00FF00">$ git fetch origin abc</span><br>fatal: Couldn't find remote ref abc<br><br><span style="color:#00FF00">$ git fetch origin master</span><br>From https://github.com/yang-an-china/easygit<br> * branch            master     -> FETCH_HEAD<br><br></div>
                     <br>
-                    <div class="p_shell"><span style="color:#00FF00">$ git fetch origin develop</span><br>From ssh://gerritro.***.com.cn:29418/###<br> * branch            develop    -> FETCH_HEAD<br> * [new branch]      develop    -> origin/develop<br></div>
+                    <div class="p_shell"><span style="color:#00FF00">$ git fetch origin develop</span><br>From ssh://gerritro.***.com.cn:29418/###<br> * branch            develop    -> FETCH_HEAD<br> * [new branch]      develop    -> origin/develop<br><br></div>
 
                     <h3><li>git fetch repository &lt;branch&gt;</li></h3>
                     <p>抓取远程代码库branch分支的内容到本地代码库，branch分支必须存在。</p>
-                    <div class="p_shell"><span style="color:#00FF00">$ git fetch https://github.com/yang-an-china/easygit.git master</span><br>From https://github.com/yang-an-china/easygit<br> * branch            master     -> FETCH_HEAD<br></div>
+                    <div class="p_shell"><span style="color:#00FF00">$ git fetch https://github.com/yang-an-china/easygit.git master</span><br>From https://github.com/yang-an-china/easygit<br> * branch            master     -> FETCH_HEAD<br><span style="color:#00FF00">$ git lg FETCH_HEAD -2</span><br>* 7c36001 - (HEAD -> master, origin/master, origin/HEAD) + clone fetch refs (2 days ago) &lt;yang-an-china&gt;<br>* fd91629 - +HEAD add commit diff reset status index working-tree (5 days ago) &lt;yang-an-china&gt;<br><br></div>
                 </td>
             </tr>
         </table>

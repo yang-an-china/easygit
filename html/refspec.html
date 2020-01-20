@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>easygit</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'><a href="../index.html">回到主页</a></h4>
+
+        <table class="main_table">
+            <tr><th class="thh1"><h1>refspec</h1></th></tr>
+            <tr><td>
+                <!--主要内容-->
+                <!---->
+                <hr><br/>
+                <b>
+                    refspec的全称是Reference Specification，全网都没有找到合适的翻译，个人觉得翻译成</b><b style="color:red">详细引用</b><b>更加合适，反正大家记住这是git里面的一个专业术语就可以了。<br><br>
+                    它的作用是建立本地和远程分支之间的联系，用于fetch，pull和push等场合。可以参考：<a href="refs.html">refs</a>，一个讲解很详细的资料：<a href="https://git.seveas.net/the-meaning-of-refs-and-refspecs.html">The meaning of refs and refspecs</a>
+                </b>
+                
+                <h3><li>格式：(+)&lt;src&gt;:&lt;dst&gt;</li></h3>
+                <p>+号为可选，指：在非ff(fast-forward)模式下也强制更新引用。</p>
+                <p>src 代表远程代码库的引用，一般填refs/heads/*。</p>
+                <p>dst代表远程引用在本地的存储位置，一般填refs/remotes/origin/*。</p>
+                                
+                <h3><li>.git/config文件</li></h3>
+                <div class="p_shell">[remote "origin"]<br>url = https://github.com/yang-an-china/easygit.git<br><span style="color:#00FF00">fetch = +refs/heads/*:refs/remotes/origin/*</span><br><br></div> 
+                
+                <h3><li>git fetch [&lt;repository&gt; [&lt;refspec&gt;]]</li></h3>
+                <p>如下命令是一个意思。</p>
+                <ul>
+                    <li><span class="shell">git fetch origin develop</span></li>
+                    <li><span class="shell">git fetch origin develop:develop</span></li>
+                    <li><span class="shell">git fetch origin refs/heads/develop:refs/remotes/origin/develop</span></li>
+                </ul>
+                
+                <h3><li>git push [&lt;repository&gt; [&lt;refspec&gt;]]</li></h3>
+                <p>如下命令是一个意思。</p>
+                <ul>
+                    <li><span class="shell">git push origin develop</span></li>
+                    <li><span class="shell">git push origin develop:develop</span></li>
+                    <li><span class="shell">git push origin refs/heads/develop:refs/remotes/origin/develop</span></li>
+                </ul>
+                <p>如下命令删除远程分支。</p>
+                <ul>
+                    <li><span class="shell">git push origin :develop</span></li>
+                </ul>
+                
+            </td></tr>
+        </table>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>
