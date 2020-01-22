@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <title>easygit</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <h4 class='home'><a href="git-revert.html">图解</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">回到主页</a></h4>
+        <table class="main_table">
+            <tr><th class="thh1"><h1>git revert</h1></th></tr>
+            <tr>
+                <td>
+                    <hr><br/>
+                    <b>回退本地代码库到某一个commit（注意：包含commit本身）。</b>
+                    <!--主要内容-->
+                    
+                    <!---->
+                    <h3><li>git revert HEAD</li></h3>
+                    <p>把HEAD回退，也就是回退本地代码库到HEAD^。</p>
+                    
+                    <h3><li>git revert commitA..commitB</li></h3>
+                    <p>把commitA(包含)到commitB(不包含)之间的commit回退掉。</p>
+
+                    <h3><li>git revert master~4..master~2</li></h3>
+                    <p>把master分支的倒数第4个(包含)到倒数第2个(不包含)之间的commit回退掉，参见 <a href="git-revert.html">图解2</a>。</p>
+
+                    <h3><li>git revert -n master~4..master~2</li></h3>
+                    <p>把master分支的倒数第4个(包含)到倒数第2个(不包含)之间的commit回退掉，没有commit，参见 <a href="git-revert.html">图解3</a>。</p>
+
+                    <h3><li>git revert --continue</li></h3>
+                    <h3><li>git revert --abort</li></h3>
+                    <h3><li>git revert --quit</li></h3>
+                </td>
+            </tr>
+        </table>
+        
+        <a href="https://github.com/yang-an-china/easygit/" class="github-corner" aria-label="Open GitHub project">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="position:fixed;top:0;fill:#fff;right:0">
+                <path class="octo-banner" d="M0 0l115 115h15l12 27 108 108V0z" fill="#151513"></path>
+                <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin:130px 106px;transform-origin:130px 106px"></path>
+                <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"></path>
+            </svg>
+        </a>
+    </body>
+</html>
